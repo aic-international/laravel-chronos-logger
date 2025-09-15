@@ -26,5 +26,12 @@
       "AicInternational\\ChronosLogger\\": "src/ChronosLogger"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AicInternational\\ChronosLogger\\ServiceProvider"
+      ]
+    }
+  },
   "minimum-stability": "stable"
 }
