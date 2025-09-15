@@ -25,7 +25,7 @@ You must add a new channel to your `config/logging.php` file:
     //...
     'chronos' => [
        'driver' => 'custom',
-        'via' => App\Logging\ChronosLogger::class,
+        'via' => AIC\ChronosLogger\Logger::class,
         'url' => env('LOG_CHRONOS_WEBHOOK_URL'),
         'token' => env('LOG_CHRONOS_TOKEN'),
         'level' => env('LOG_CHRONOS_LEVEL', 'debug'),
