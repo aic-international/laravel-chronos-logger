@@ -85,6 +85,38 @@ Of course, you can send your log messages to multiple Chronos channels. Just cre
 `config/logging.php` and put them in the stack. Each channel should be named differently and should point to a different
 web hook URL.
 
+## Testing the Logger via Artisan
+
+The package includes an Artisan command to quickly test the Chronos Logger. This ensures your logs are being sent
+correctly.
+
+**Command:**
+
+```bash
+php artisan chronos:log-test
+```
+
+**Optional custom message:**
+
+You can provide your own test message:
+
+```bash
+php artisan chronos:log-test "Hello from Chronos!"
+```
+
+**Result:**
+
+- A test log entry will be sent to the configured `chronos` channel.
+- The console will display a confirmation:
+
+```
+✅ Test log sent: Hello from Chronos!
+```
+
+**Tip:**
+Use this command after installation or when changing configuration to quickly verify that everything is set up
+correctly.
+
 ## The communication with Chronos Web hook failed
 
 You might encounter this exception alongside "cURL error 60: SSL certificate problem: unable to get local issuer
