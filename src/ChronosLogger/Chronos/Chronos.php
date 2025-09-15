@@ -1,6 +1,6 @@
 <?php
 
-namespace AIC\ChronosLogger\Chronos;
+namespace AicInternational\ChronosLogger\Chronos;
 
 use Http;
 use Illuminate\Http\Client\ConnectionException;

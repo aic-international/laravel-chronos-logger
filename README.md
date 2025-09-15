@@ -1,6 +1,8 @@
 # Laravel Chronos Logger
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/aic-international/laravel-chronos-logger.svg?style=flat-square)](https://packagist.org/packages/aic-international/laravel-chronos-logger)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/aic-international/laravel-chronos-logger.svg?style=flat-square)](https://packagist.org/packages/aic-international/laravel-chronos-logger)
 
 `aic-international/laravel-chronos-logger` is a laravel package providing a logging handler to send logs to a Chronos
 Server.
@@ -25,7 +27,7 @@ You must add a new channel to your `config/logging.php` file:
     //...
     'chronos' => [
        'driver' => 'custom',
-        'via' => AIC\ChronosLogger\Logger::class,
+        'via' => AicInternational\ChronosLogger\Logger::class,
         'url' => env('LOG_CHRONOS_WEBHOOK_URL'),
         'token' => env('LOG_CHRONOS_TOKEN'),
         'level' => env('LOG_CHRONOS_LEVEL', 'debug'),

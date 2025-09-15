@@ -1,6 +1,6 @@
 <?php
 
-namespace AIC\ChronosLogger;
+namespace AicInternational\ChronosLogger;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;

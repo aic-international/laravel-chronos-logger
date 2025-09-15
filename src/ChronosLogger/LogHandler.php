@@ -1,6 +1,6 @@
 <?php
 
-namespace AIC\ChronosLogger;
+namespace AicInternational\ChronosLogger;
 
 use AIC\ChronosLogger\Chronos\Chronos;
 use Monolog\Handler\AbstractProcessingHandler;

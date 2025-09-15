@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AIC\\ChronosLogger\\": "src/ChronosLogger"
+      "AicInternational\\ChronosLogger\\": "src/ChronosLogger"
     }
   },
   "minimum-stability": "stable"
