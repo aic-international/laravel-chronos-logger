@@ -40,7 +40,8 @@ You must add a new channel to your `config/logging.php` file:
 You can then provide the web-hook URL in your `.env` file:
 
 ```
-LOG_CHRONOS_WEBHOOK_URL=https://example.com/api/log
+LOG_CHRONOS_WEBHOOK_URL=https://example.com
+CHRONOS_LOG_TOKEN=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX
 ```
 
 ### Use the logger channel
