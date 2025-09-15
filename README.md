@@ -39,7 +39,7 @@ You must add a new channel to your `config/logging.php` file:
 ];
 ```
 
-You can then provide the web-hook URL in your `.env` file:
+You can then provide the web-hook URL and token in your `.env` file:
 
 ```
 LOG_CHRONOS_WEBHOOK_URL=https://example.com
@@ -87,18 +87,25 @@ web hook URL.
 
 ## Testing the Logger via Artisan
 
-The package includes an Artisan command to quickly test the Chronos Logger. This ensures your logs are being sent
-correctly.
+#### 1. Inspect channel configuration
 
-**Command:**
+```bash
+php artisan chronos:config
+```
+
+**Optional: provide another channel name:**
+
+```bash
+php artisan chronos:config chronos_staging
+```
+
+#### 2. Send a test log
 
 ```bash
 php artisan chronos:log-test
 ```
 
 **Optional custom message:**
-
-You can provide your own test message:
 
 ```bash
 php artisan chronos:log-test "Hello from Chronos!"
@@ -116,6 +123,8 @@ php artisan chronos:log-test "Hello from Chronos!"
 **Tip:**
 Use this command after installation or when changing configuration to quickly verify that everything is set up
 correctly.
+
+---
 
 ## The communication with Chronos Web hook failed
 

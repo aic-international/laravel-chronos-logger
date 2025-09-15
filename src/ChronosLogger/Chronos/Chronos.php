@@ -16,6 +16,8 @@ class Chronos {
 		$token ??= config($channel . '.token');
 		$url ??= config($channel . '.url');
 		$labels ??= config($channel . '.labels');
+		$created ??= now()->format('Y-m-d H:i:s');
+
 		$data = [
 			'token' => $token,
 			'title' => $title,
@@ -23,7 +25,7 @@ class Chronos {
 			'level' => $level,
 			'labels' => $labels ?? null,
 			'context' => $context ?? null,
-			'created' => $created ?? now()->format('Y-m-d H:i:s'),
+			'created' => $created,
 		];
 
 		try {
@@ -32,7 +34,14 @@ class Chronos {
 				'Content-Type' => 'application/json',
 			])->post($url . '/api/log', $data);
 		} catch (ConnectionException $e) {
-			Log::channel('single')->error($e->getMessage());
+			Log::channel('single')->error("Chronos connection failed: " . $e->getMessage());
+			
+			Log::channel('single')->{$level}($title, [
+				'content' => $content,
+				'labels' => $labels,
+				'context' => $context,
+				'created' => $created,
+			]);
 		}
 	}
 
