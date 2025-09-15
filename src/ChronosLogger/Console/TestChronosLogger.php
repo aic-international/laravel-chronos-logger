@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
 class TestChronosLogger extends Command {
-	protected $signature = 'chronos:log-test {message? : The test message';
+	protected $signature = 'chronos:log-test {message? : The test message}';
 	protected $description = 'Sends a test log message via the Chronos Logger';
 
 	public function handle(): int {
