@@ -5,9 +5,9 @@ namespace AIC\ChronosLogger;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use InvalidArgumentException;
-use Monolog\Logger;
+use Monolog\Logger as Monolog;
 
-class ChronosLogger {
+class Logger {
 	private Repository $config;
 	private $container;
 
@@ -16,7 +16,7 @@ class ChronosLogger {
 		$this->config = $config;
 	}
 
-	public function __invoke(array $config): Logger {
+	public function __invoke(array $config): Monolog {
 		if (empty($config['url'])) {
 			throw new InvalidArgumentException('The "url" option is required for the ChronosLogger');
 		}
@@ -24,9 +24,9 @@ class ChronosLogger {
 		if (empty($config['token'])) {
 			throw new InvalidArgumentException('The "token" option is required for the ChronosLogger');
 		}
-		
-		return new Logger($this->config->get('app.name'), [
-			new ChronosLogHandler($config)
+
+		return new Monolog($this->config->get('app.name'), [
+			new LogHandler($config)
 		]);
 	}
 }
