@@ -2,7 +2,7 @@
 
 namespace AicInternational\ChronosLogger;
 
-use AIC\ChronosLogger\Chronos\Chronos;
+use AicInternational\ChronosLogger\Chronos\Chronos;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\Logger;
