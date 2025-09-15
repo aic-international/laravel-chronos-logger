@@ -102,10 +102,6 @@ inability to verify the server's SSL certificate.
 
 - Save the php.ini file and restart your server to implement the changes.
 
-## Version history
-
-See the [dedicated change log](CHANGELOG.md)
-
 ## Credits
 
 - Got some ideas from [RakInteractive/Chronos](https://github.com/RakInteractive/Chronos)
